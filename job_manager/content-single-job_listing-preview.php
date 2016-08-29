@@ -32,7 +32,12 @@ if ( ! is_wp_error( $terms ) && ( is_array( $terms ) || is_object( $terms ) ) ) 
 <?php
 //get the listing gallery
 $photos = listable_get_listing_gallery_ids();
-if ( ! empty( $photos ) ) : ?>
+//get an immomento iframe
+$immomento_iframe_src = get_post_meta( get_the_ID(), 'immomento_iframe_src', true );
+
+if ( ! empty( $immomento_iframe_src ) ) :?>
+	<iframe id="immomento_iframe" name="immomento-iframe" src="<?php echo esc_attr( $immomento_iframe_src ); ?>" width="100%" height="600" frameborder="0" border="0" allowtransparency="true"></iframe>
+<?php elseif ( ! empty( $photos ) ) : ?>
 
 	<div class="entry-featured-carousel">
 		<?php if ( count( $photos ) == 1 ):
