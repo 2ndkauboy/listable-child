@@ -28,3 +28,16 @@ specifically the 'Template: listable' line. */
 .entry-content a {
 	text-decoration: underline;
 }
+
+.page-template-front_page .entry-header:before {
+	display: none;
+}
+
+.page-template-front_page .entry-header {
+	position: relative;
+}
+
+.page-template-front_page .immomento-iframe {
+	position: absolute;
+	top: 0;
+}
